@@ -1,0 +1,20 @@
+[package]
+name = "fire-work"
+version = "0.1.0"
+edition = "2021"
+
+# ⬇️ これを新しく追記、または上書きしてください
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+# ⬇️ 依存関係（dependencies）にこれらが入っているかも確認してください
+[dependencies]
+wasm-bindgen = "0.2"
+js-sys = "0.3"
+web-sys = { version = "0.3", features = [
+    "Window",
+    "Document",
+    "Element",
+    "HtmlCanvasElement",
+    "CanvasRenderingContext2d"
+] }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Rust WebAssembly 花火</title>
+    <style>
+        body {
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        #field {
+            background-color: black;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas width="800" height="600" id="field"></canvas>
+
+    <script type="module">
+        // ⬇️ 自動生成された pkg フォルダ内の JS ファイルをインポート
+        import init from './pkg/fire_work.js';
+        
+        // WebAssembly の初期化と実行
+        init().catch(console.error);
+    </script>
+</body>
+</html>
